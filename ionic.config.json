@@ -1,0 +1,7 @@
+{
+  "name": "the-last-suite",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
