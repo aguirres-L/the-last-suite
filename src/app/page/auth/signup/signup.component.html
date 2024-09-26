@@ -1,0 +1,93 @@
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()" >
+
+  <app-btn-back></app-btn-back>
+
+
+  <div class="flex flex-col items-center justify-center px-6 py-2 mx-auto lg:py-0 ">
+    <div class="w-full-screen bg-white rounded-lg shadow border md:mt-0 sm:max-w-md xl:p-0">
+      <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+        <p class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
+          Create an User 
+        </p>
+
+        <div>
+          <label class="block mb-2 text-sm font-medium text-gray-900">Your Name</label>
+          <input
+            placeholder="User"
+            class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5"
+            formControlName="name"
+            id="username"
+            type="text"
+          />
+        </div>
+
+        <div>
+          <label class="block mb-2 text-sm font-medium text-gray-900">Your Email</label>
+          <input
+            placeholder="user@user.com"
+            class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5"
+            formControlName="email"
+            id="email"
+            type="email"
+          />
+        </div>
+
+        <div>
+          <label class="block mb-2 text-sm font-medium text-gray-900">Password</label>
+          <input
+            class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5"
+            placeholder="••••••••"
+            formControlName="password"
+            id="password"
+            type="password"
+          />
+        </div>
+      
+        <div>
+          <label class="block mb-2 text-sm font-medium text-gray-900">Phone</label>
+          <input
+            class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5"
+            placeholder="123456"
+            formControlName="phone"
+            id="phone"
+            type="text"
+          />
+        </div>
+        
+        
+       <!--  <div>
+          <label class=" block bm-2 text-sm font-medium text-gray-900"  > Upload Profile Image </label>
+          <input type="file"
+                 class=" br-gray-50 border border-gray-300 text-gray-900 sm:text-sm block w-full p-2.5 "
+               (change)="onFileSelected($event)"
+          >
+        </div> -->
+
+
+        <div class="flex items-start">
+          <div class="flex items-center h-5">
+            <input
+              class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300"
+              type="checkbox"
+              id="terms"
+            />
+          </div>
+          <div class="ml-3 text-sm">
+            <label class="font-light text-gray-500">
+              I accept the
+              <a href="#" class="font-medium text-primary-600 hover:underline">Terms and Conditions</a>
+            </label>
+          </div>
+        </div>
+
+
+        <button
+          class="w-full bg-blue-500 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center text-white"
+          type="submit"
+        >
+          Create an account
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

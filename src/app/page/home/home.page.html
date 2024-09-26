@@ -1,0 +1,69 @@
+<ion-app>
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Home</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true">
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <ion-title size="large">Home</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <div id="container"  class=" bg-transparent p-8">
+      <!-- Inline Date Picker -->
+      <ion-item class="" >
+        
+        <!-- <IonDatetime ref={datetime} presentation="date" multiple={true}></IonDatetime>; -->
+        <ion-datetime  min="2024-09-01T00:00:00" minuteValues="0,15,30,45" ref=[dateCalendar] [highlightedDates]="highlightedDates"   [dayValues]="busyDays" display-format="DD/MM/YYYY" [(ngModel)]="selectedDate" 
+          (ionChange)="onDateChange()" placeholder="Select Date"></ion-datetime>  <!--  necesito que se pinten los dias disponibles y tambien necesito que los otros dias no se puedan seleccionar -->
+      </ion-item>
+
+
+  
+      <ion-label class="my-1" >Date Range</ion-label>
+      
+      <ion-item class="my-2 picker" *ngIf="!datesSelected">
+        <div class="flex  flex-col"> <!-- Cambiar a flex-col para disposición vertical -->
+        
+          <input id="datepicker-range-start" name="start" type="date"
+            [(ngModel)]="startDate" (ngModelChange)="onRangeChange()"
+            class="text-whiteborder border border-gray-300  text-sm rounded-lg block w-full p-2.5"
+            placeholder="Select date start">
+            
+          <span class="mx-4 ml-[40%] text-gray-500">to</span>
+          
+          <input id="datepicker-range-end" name="end" type="date"
+            [(ngModel)]="endDate" (ngModelChange)="onRangeChange()"
+            class=" border border-gray-300 text-white text-sm rounded-lg block w-full p-2.5"
+            placeholder="Select date end">
+        </div>
+      </ion-item>
+      
+
+      <!-- Mostrar Fechas Seleccionadas -->
+      <ion-item *ngIf="datesSelected">
+        
+        <div *ngFor="let date of dateArray; let i = index">
+          <!-- Si el objeto tiene una fecha única -->
+          <div *ngIf="date.date">
+            {{ date.date }}
+          </div>
+          <!-- Si el objeto tiene un rango de fechas -->
+          <div *ngIf="date.startDate && date.endDate">
+            {{ date.startDate }} - {{ date.endDate }}
+          </div>
+          <ion-button fill="clear" (click)="removeDate(date)">Edit</ion-button>
+        </div>
+      </ion-item>
+
+      <!-- Botón para guardar fechas -->
+      <ion-button expand="full" (click)="saveDates()" *ngIf="datesSelected">Save The Date</ion-button>
+    </div>
+  </ion-content>
+</ion-app>

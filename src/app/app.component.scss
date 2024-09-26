@@ -1,5 +1,5 @@
 ion-menu ion-content {
-  --background: var(--ion-item-background, var(--ion-background-color, #fff));
+  --background: var(--ion-item-background, var(--ion-background-color, #ffeded00));
 }
 
 ion-menu.md ion-content {
@@ -116,4 +116,82 @@ ion-note {
 
 ion-item.selected {
   --color: var(--ion-color-primary);
+}
+
+
+
+
+/* 
+BTN Logout
+*/
+
+ 
+.Btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 55px;
+  height: 45px;
+  border: none;
+  border-radius: 10%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: 1.3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background-color: rgb(255, 65, 65);
+  margin-left: 5%;
+}
+
+/* plus sign */
+.sign {
+  width: 100%;
+  transition-duration: .3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign svg {
+  width: 17px;
+}
+
+.sign svg path {
+  fill: white;
+}
+/* text */
+.text {
+  position: absolute;
+  right: 0%;
+  width: 55px;
+  opacity: 0;
+  color: white;
+  font-size: 1em;
+  font-weight: 600;
+  transition-duration: .5s;
+  
+}
+/* hover effect on button width */
+.Btn:hover {
+  width: 155px;
+
+  border-radius: 40px;
+  transition-duration: .8s;
+}
+
+.Btn:hover .sign {
+  width: 30%;
+  transition-duration: .5s;
+  padding-left: 20px;
+}
+/* hover effect button's text */
+.Btn:hover .text {
+  opacity: .8;
+  width: 85px;
+  transition-duration: 1.3s;
+  padding-right: 10px;
+}
+/* button click effect*/
+.Btn:active {
+  transform: translate(2px ,2px);
 }

@@ -1,0 +1,46 @@
+<ion-content class="container-login" [fullscreen]="true">
+
+
+  <form [formGroup]="formLogin" (ngSubmit)="onSubmit()" class="form">
+  
+    <div class="  header">
+      The Last Suite
+      <div class="cube-loader">
+        <div class="cube-top"></div>
+        <div class="cube-wrapper">
+          <span class="cube-span" style="--i:0">
+            <div style="text-align: center; font-size: 40px;" class="taco-container">🏝️</div>
+          </span>
+          <span class="cube-span" style="--i:1">
+            <div style="text-align: center; font-size: 40px;" class="taco-container">🛎️</div>
+          </span>
+          <span class="cube-span" style="--i:2">
+            <div style="text-align: center; font-size: 40px;" class="taco-container">🍹</div>
+          </span>
+          <span class="cube-span" style="--i:3">
+            <div style="text-align: center; font-size: 40px;" class="taco-container">🌊</div>
+          </span>
+        </div>
+      </div>
+      
+      
+    </div>
+    
+    <div class="inputs">
+   <!--    <input placeholder="Email" class="input" type="text">
+      <input placeholder="Password" class="input" type="password"> -->
+      
+          <!-- Input email -->
+          <input placeholder="Email" class="input" type="email" formControlName="email">
+      
+          <!-- Input password -->
+          <input placeholder="Password" class="input" type="password" formControlName="password">
+          
+      
+     
+      <button type="submit" class="sigin-btn">Login</button>
+      <a class="forget" href="auth/forget-password">Forget password?</a>
+      <p class="signup-link">Don't have an account? <a href="auth/singup" >Sign up</a></p>
+    </div>
+  </form>
+</ion-content>

@@ -1,0 +1,44 @@
+<ion-app>
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Profile</ion-title>
+    </ion-toolbar> 
+  </ion-header>
+
+  <ion-content [fullscreen]="true" class="flex items-center justify-center p-4">
+    <div class="container">
+      <!-- Card para Modificar Datos del Usuario -->
+      <app-card [user]="user"></app-card>
+      <!-- Card para Mostrar Reservas -->
+
+
+      <div class="card">
+        <div class="card-top" *ngIf="desde || hasta">
+          <p class="card__title">Until: {{ desde }}</p>
+          <p class="card__title">From: {{ hasta }}</p>
+        </div>
+        <div class="card-top" *ngIf="!desde && !hasta">
+          <p class="text-center card__title">No dates available</p>
+        </div>
+        
+
+        <div *ngIf="desde || hasta" class="card__btns">
+          <button (click)="removeDates()"  class="add-btn">
+       
+         <app-delet></app-delet>
+         </button>
+         
+          <!-- <button (click)="editDates()" class="add-btn">
+            <app-edit></app-edit>
+          </button> -->
+
+        </div>
+      </div>
+
+
+    </div>
+  </ion-content>
+</ion-app>
